@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-west-2"  # Replace with your preferred region
-}
-
 data "archive_file" "lambda_zip" {
   type        = "zip"
   source_file = "${path.module}/lambda_function.py"
