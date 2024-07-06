@@ -1,8 +1,8 @@
-data "archive_file" "lambda_zip" {
-  type        = "zip"
-  source_file = "lambda_function.py"
-  output_path = "lambda_function.zip"
-}
+# data "archive_file" "lambda_zip" {
+#   type        = "zip"
+#   source_file = "lambda_function.py"
+#   output_path = "lambda_function.zip"
+# }
 
 resource "aws_iam_role" "lambda_exec_role" {
   name = "lambda_exec_role"
@@ -32,7 +32,7 @@ resource "aws_lambda_function" "hello_world" {
   role          = aws_iam_role.lambda_exec_role.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.8"
-  filename      = data.archive_file.lambda_zip.output_path
+  filename      = "lambda_function.zip"
 
-  source_code_hash = filebase64sha256(data.archive_file.lambda_zip.output_path)
+  source_code_hash = filebase64sha256("lambda_function.zip")
 }
