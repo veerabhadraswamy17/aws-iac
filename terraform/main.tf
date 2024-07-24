@@ -5,7 +5,7 @@ provider "aws" {
 
 # Create an S3 bucket
 resource "aws_s3_bucket" "my_harness_tfstate_bucket" {
-  bucket = "my-unique-harness-bucket-name" # specify a unique bucket name
+  bucket = var.s3-demo-bucket-name # specify a unique bucket name
   
   tags = {
     Name        = "harness tf bucket"
