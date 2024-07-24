@@ -1,5 +1,5 @@
 variable "s3-Env" {
-    description = "s3 environment"
+    description = "environment"
     type = string
 }
 
