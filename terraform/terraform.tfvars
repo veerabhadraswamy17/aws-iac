@@ -1,1 +1,1 @@
-s3-demo-bucket-name = "demo-bucket-in-<+pipeline.Variable.ENV>-environment"
+s3-demo-bucket-name = "demo-bucket-in-<+pipeline.variables.Env>-environment"
