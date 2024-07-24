@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "my_harness_tfstate_bucket" {
   bucket = var.s3-demo-bucket-name # specify a unique bucket name
   
   tags = {
-    Name        = "harness demo bucket"
+    Name        = "harness s3 bucket"
     Environment = var.s3-Env
   }
 }
